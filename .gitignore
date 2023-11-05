@@ -1,6 +1,5 @@
 .cph
 .vscode
 .vsc-leetcode
-output
 *.bin
 *.exe
