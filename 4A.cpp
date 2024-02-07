@@ -1,11 +1,16 @@
 #include <iostream>
 
+bool isEven(int n)
+{
+    return n % 2 == 0;
+}
+
 int main()
 {
     int n;
     std::cin >> n;
 
-    if (n != 0 && n % 2 == 0)
+    if (isEven(n))
     {
         std::cout << "YES" << std::endl;
     }
