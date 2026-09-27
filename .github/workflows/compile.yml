@@ -1,0 +1,19 @@
+name: Compile solutions
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile every solution
+        run: |
+          status=0
+          for f in */*.cpp; do
+            g++ -std=c++17 -Wall -fsyntax-only "$f" || status=1
+          done
+          exit $status
